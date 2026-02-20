@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Las Pecadoras — Menú digital. Parrilla, mariscos, coctelería y mucho sabor de hacienda." />
+  <title>Las Pecadoras — Menú</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Rye&family=Pacifico&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-ring">
+      <div class="loader-blob"></div>
+    </div>
+    <p class="loader-text">Las Pecadoras</p>
+  </div>
+
+  <!-- HERO -->
+  <header id="header" class="section-hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline>
+     <source src="assets/video/parrilla-loop.mp4" type="video/mp4"> 
+      </video>
+    </div>
+    <div class="hero-grain"></div>
+
+    <!-- Brasas flotantes CSS — dan vida al hero sin JS -->
+    <span class="ember ember-1" aria-hidden="true"></span>
+    <span class="ember ember-2" aria-hidden="true"></span>
+    <span class="ember ember-3" aria-hidden="true"></span>
+    <span class="ember ember-4" aria-hidden="true"></span>
+    <span class="ember ember-5" aria-hidden="true"></span>
+    <span class="ember ember-6" aria-hidden="true"></span>
+    <span class="ember ember-7" aria-hidden="true"></span>
+    <span class="ember ember-8" aria-hidden="true"></span>
+
+    <div class="hero-inner reveal">
+      <div class="logo-wrap">
+        <img src="assets/img/logo/logo_pecadoras.png" alt="Logo Las Pecadoras" class="logo-img" onerror="this.style.display='none'" />
+        <div class="logo-fallback">
+          <span class="logo-icon">✦</span>
+        </div>
+      </div>
+      <h1 class="hero-title">Las Pecadoras</h1>
+      <p class="hero-sub">Hacienda de Sabor · Parrilla · Mariscos · Coctelería</p>
+      <div class="hero-divider">
+        <span class="rope-line">⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV STICKY — solo .nav-tabs tiene overflow, el nav raíz no -->
+  <nav id="section-nav" aria-label="Secciones del menú">
+    <div class="nav-tabs">
+      <!-- Tabs generados automáticamente por scroll-reveal.js -->
+    </div>
+  </nav>
+
+  <!-- DARK TOGGLE — posición fija independiente del nav -->
+  <button class="dark-toggle" aria-label="Cambiar modo de color" title="Modo noche">🌙</button>
+
+  <main>
+
+    <section id="especialidad" class="menu-section section-especialidad" data-nav-label="Especialidad">
+      <div class="section-label reveal">⌖ Especialidad de la Casa ⌖</div>
+      <div class="card card-featured reveal">
+        <div class="card-img-wrap">
+          <img src="assets/img/platillos/la-pecadora.jpg" alt="La Pecadora" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+        </div>
+        <div class="card-body">
+          <div class="badge badge-star">★ La Joya ★</div>
+          <h2 class="card-title">La Pecadora</h2>
+          <p class="card-volume">1 Litro</p>
+          <p class="card-desc">Cerveza perfectamente escarchada, acompañada de camarones frescos y la receta secreta que solo encontrarás aquí.</p>
+          <div class="card-price-wrap">
+            <span class="price">$140</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="domingos" class="menu-section section-domingos" data-nav-label="Domingos">
+      <div class="section-label reveal">⌖ Domingos de Crudear ⌖</div>
+      <div class="card card-sunday reveal">
+        <div class="sunday-badge">Solo Domingos</div>
+        <div class="card-img-wrap">
+          <img src="assets/img/platillos/pancita.jpg" alt="Pancita de la Casa" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Pancita de la Casa</h2>
+          <p class="card-desc">El remedio infalible. Caldo tradicional preparado con el sazón de la hacienda para revivir el cuerpo.</p>
+          <div class="card-price-wrap">
+            <span class="price">$90</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parrilla" class="menu-section section-parrilla" data-nav-label="Parrilla">
+      <div class="section-label reveal">⌖ De la Hacienda — Parrilla ⌖</div>
+      <p class="section-sub reveal">Calidad de exportación en cada bocado.</p>
+
+      <div class="card card-list reveal">
+        <div class="card-img-wrap">
+          <img src="assets/img/platillos/tacos.jpg" alt="Tacos de la Hacienda" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Tacos Individuales</h2>
+          <p class="card-price-inline"><span class="price">$30</span> <span class="per">c/u</span></p>
+          <ul class="taco-list">
+            <li><span class="bullet-chile">🌶</span> Arrachera</li>
+            <li><span class="bullet-chile">🌶</span> Chistorra</li>
+            <li><span class="bullet-chile">🌶</span> Chorizo Argentino</li>
+            <li><span class="bullet-chile">🌶</span> Aguja de Res</li>
+            <li><span class="bullet-chile">🌶</span> Costilla de Res</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card card-list reveal">
+        <div class="card-img-wrap">
+          <img src="assets/img/platillos/hamburguesa.jpg" alt="Hamburguesa de Arrachera" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Hamburguesa de Arrachera</h2>
+          <p class="card-desc">Jugosa y sin pretextos. <em class="nota">★ No incluye papas</em></p>
+          <div class="card-price-wrap">
+            <span class="price">$80</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="botanas" class="menu-section section-snacks" data-nav-label="Botanas">
+      <div class="section-label reveal">⌖ Botanas y Snacks ⌖</div>
+      <div class="cards-grid">
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/platillos/alitas.jpg" alt="Alitas de Pollo" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Alitas de Pollo</h3>
+            <p class="card-desc">Salsas: Mango Habanero o BBQ</p>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">6 pzas</span><span class="price">$70</span></div>
+              <div class="size-row"><span class="size-label">12 pzas</span><span class="price">$120</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/platillos/camarones.jpg" alt="Botana de Camarones" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Botana de Camarones</h3>
+            <p class="card-desc">Frescos, con limón y todo el sabor del mar.</p>
+            <div class="card-price-wrap">
+              <span class="price">$100</span>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/platillos/papas_francesa.png" alt="Papas a la Francesa" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Papas a la Francesa</h3>
+            <p class="card-desc">El clásico de siempre.</p>
+            <div class="card-price-wrap">
+              <span class="price">$45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="antojitos" class="menu-section section-antojitos" data-nav-label="Antojitos">
+      <div class="section-label reveal">⌖ Antojitos Locos ⌖</div>
+      <div class="cards-grid">
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/platillos/dorilocos.png" alt="Dorilocos" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Dorilocos</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">Chico</span><span class="price">$30</span></div>
+              <div class="size-row"><span class="size-label">Grande</span><span class="price">$50</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/platillos/chicharrones.jpg" alt="Chicharrones Preparados" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Chicharrones Preparados</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">Chico</span><span class="price">$20</span></div>
+              <div class="size-row"><span class="size-label">Grande</span><span class="price">$35</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/platillos/papaslocas.png" alt="Papas Locas" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Papas Locas</h3>
+            <div class="card-price-wrap">
+              <span class="price">$40</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cocteles" class="menu-section section-cocteles" data-nav-label="Cócteles">
+      <div class="section-label reveal">⌖ Coctelería de la Casa ⌖</div>
+      <div class="card card-featured card-mojito reveal">
+        <div class="card-img-wrap">
+          <img src="assets/img/bebidas/mojito.jpg" alt="Mojitos Artesanales" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+        </div>
+        <div class="card-body">
+          <div class="badge">★ Mojitos ★</div>
+          <h2 class="card-title">Mojitos Artesanales</h2>
+          <div class="mojito-flavors">
+            <span class="flavor">🍃 Natural</span>
+            <span class="flavor">🍓 Frutos Rojos</span>
+            <span class="flavor">🥭 Mango</span>
+          </div>
+          <div class="size-prices size-prices--big">
+            <div class="size-row"><span class="size-label">½ Litro</span><span class="price">$70</span></div>
+            <div class="size-row"><span class="size-label">1 Litro</span><span class="price">$130</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/bebidas/p_colada.png" alt="Piñas Coladas" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Piñas Coladas</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">½ L</span><span class="price">$60</span></div>
+              <div class="size-row"><span class="size-label">1 L</span><span class="price">$100</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/bebidas/mediasdeseda.png" alt="Medias de Seda" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Medias de Seda</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">½ L</span><span class="price">$60</span></div>
+              <div class="size-row"><span class="size-label">1 L</span><span class="price">$100</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/bebidas/azulitos.png" alt="Pitufos / Azulitos" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pitufos / Azulitos</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">½ L</span><span class="price">$60</span></div>
+              <div class="size-row"><span class="size-label">1 L</span><span class="price">$100</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cervezas" class="menu-section section-cervezas" data-nav-label="Cervezas">
+      <div class="section-label reveal">⌖ Cervecería y Tarros ⌖</div>
+      <div class="cards-grid">
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/bebidas/tarro-cerveza.jpg" alt="Tarro de Cerveza" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tarro de Cerveza</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">½ L</span><span class="price">$45</span></div>
+              <div class="size-row"><span class="size-label">1 L</span><span class="price">$65</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/bebidas/tarro_cubano.png" alt="Tarro Cubano" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tarro Cubano</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">½ L</span><span class="price">$45</span></div>
+              <div class="size-row"><span class="size-label">1 L</span><span class="price">$70</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-mini reveal">
+          <div class="card-img-wrap">
+            <img src="assets/img/bebidas/tarro_clamato.png" alt="Tarro Clamato" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tarro Clamato</h3>
+            <div class="size-prices">
+              <div class="size-row"><span class="size-label">½ L</span><span class="price">$50</span></div>
+              <div class="size-row"><span class="size-label">1 L</span><span class="price">$80</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bebidas" class="menu-section section-bebidas" data-nav-label="Bebidas">
+      <div class="section-label reveal">⌖ Bebidas Frías ⌖</div>
+      <p class="section-sub reveal">Presentación en botella de vidrio</p>
+      <div class="bebidas-grid reveal">
+        <div class="bebida-item">
+          <span class="bebida-name">Coca-Cola <em>600ml</em></span>
+          <span class="bebida-dots"></span>
+          <span class="price">$25</span>
+        </div>
+        <div class="bebida-item">
+          <span class="bebida-name">Jugo Boing</span>
+          <span class="bebida-dots"></span>
+          <span class="price">$25</span>
+        </div>
+        <div class="bebida-item">
+          <span class="bebida-name">Sangría Señorial</span>
+          <span class="bebida-dots"></span>
+          <span class="price">$25</span>
+        </div>
+        <div class="bebida-item">
+          <span class="bebida-name">Agua Mineral</span>
+          <span class="bebida-dots"></span>
+          <span class="price">$25</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="resenas" class="menu-section section-testimonios" data-nav-label="Reseñas">
+      <div class="section-label reveal">⌖ Lo que dicen ⌖</div>
+      <div class="cards-grid reveal-stagger reveal">
+        <div class="card card-mini card-testimonio">
+          <div class="card-body">
+            <p class="testimonio-estrellas">★★★★★</p>
+            <p class="testimonio-texto">La Pecadora es lo que siempre falló en mi dieta. Sin arrepentimientos.</p>
+            <p class="testimonio-autor">— Cliente fiel, Huatusco</p>
+          </div>
+        </div>
+        <div class="card card-mini card-testimonio">
+          <div class="card-body">
+            <p class="testimonio-estrellas">★★★★★</p>
+            <p class="testimonio-texto">Los tacos de arrachera son un pecado que vale la pena confesar.</p>
+            <p class="testimonio-autor">— @ejemplo_ig</p>
+          </div>
+        </div>
+        <div class="card card-mini card-testimonio">
+          <div class="card-body">
+            <p class="testimonio-estrellas">★★★★★</p>
+            <p class="testimonio-texto">La pancita dominical es el único remedio que funciona. Garantizado.</p>
+            <p class="testimonio-autor">— Cliente de domingo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="menu-section" data-nav-label="Galería">
+      <div class="section-label reveal">⌖ El Ambiente ⌖</div>
+      <div class="galeria-grid reveal">
+        <div class="galeria-item">
+          <img src="assets/img/ambiente/ambiente-principal.jpg" alt="Ambiente Las Pecadoras" class="galeria-img" onerror="this.parentElement.style.background='var(--cafe-medio)'" />
+        </div>
+        <div class="galeria-item">
+          <img src="assets/img/ambiente/parrilla.jpg" alt="Parrilla encendida" class="galeria-img" onerror="this.parentElement.style.background='var(--rojo)'" />
+        </div>
+        <div class="galeria-item">
+          <img src="assets/img/ambiente/clientes.jpg" alt="Clientes disfrutando" class="galeria-img" onerror="this.parentElement.style.background='var(--naranja)'" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="reveal">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-title">Las Pecadoras</p>
+        <p class="footer-tagline">Hacienda de Sabor desde el primer bocado</p>
+      </div>
+<div class="footer-actions">
+  <a href="https://www.google.com/maps/search/?api=1&query=19.713718,-98.791930" 
+     target="_blank" 
+     rel="noopener" 
+     class="btn btn-maps">
+     <span>📍</span>Ver ubicación en Maps
+  </a>
+        </a>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1DG4hic6LW/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/laspecadoras21?igsh=MWtndjJobnNqeW84bA==" class="social-link" aria-label="Instagram">ig</a>
+          <a href="https://wa.me/5215569004323" class="social-link" aria-label="WhatsApp">wa</a>
+        </div>
+      </di>
+      <p class="footer-copy">© 2025 Las Pecadoras · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- FAB WhatsApp -->
+  <a href="https://wa.me/5215569004323?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20en%20Las%20Pecadoras.%20¿Me%20pueden%20ayudar?"
+     target="_blank" rel="noopener" class="fab-whatsapp" aria-label="Pide por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="fab-label">¡Pide tu pecado aquí!</span>
+  </a>
+
+  <script src="js/loader.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+/* ═══════════════════════════════════════════════════════════════
+   LAS PECADORAS — components.css
+   Tarjetas · Botones · Badges · Tipografía de menú
+═══════════════════════════════════════════════════════════════ */
+
+/* ─── Precio ──────────────────────────────────────────────────── */
+.price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--rojo);
+  line-height: 1;
+  text-shadow: 2px 2px 0 rgba(139,0,0,0.2);
+}
+
+.per {
+  font-family: var(--font-body);
+  font-size: 0.8rem; /* FIX #11: de 0.75 a 0.8 */
+  color: var(--color-sub);
+  font-style: italic;
+  margin-left: 0.15rem;
+}
+
+/* ─── Card Base ───────────────────────────────────────────────── */
+.card {
+  background: var(--bg-carta);
+  border: var(--border-main);
+  box-shadow: var(--shadow-hard);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(62,39,35,0.07) 2px,
+    rgba(62,39,35,0.07) 4px
+  );
+  pointer-events: none;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 40px; height: 40px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(62,39,35,0.07) 2px,
+    rgba(62,39,35,0.07) 4px
+  );
+  pointer-events: none;
+}
+
+.card-body { padding: 1.1rem 1.25rem 1.25rem; }
+
+/* ─── Card Image ─────────────────────────────────────────────── */
+.card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--cafe-medio);
+  border-bottom: var(--border-main);
+}
+
+.card-img-wrap.no-img { display: none; }
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.15) contrast(1.05);
+  object-position: 45% 40%;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom sutil en hover/active para dar vida a las imágenes */
+@media (hover: hover) {
+  .card:hover .card-img { transform: scale(1.04); }
+}
+.card:active .card-img { transform: scale(1.01); }
+
+/* ─── Card Titles ─────────────────────────────────────────────── */
+.card-title {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--cafe-cuero);
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+/* Dark mode: title más claro */
+@media (prefers-color-scheme: dark) {
+  .card-title { color: var(--hueso); }
+}
+body.dark-mode .card-title { color: var(--hueso); }
+
+.card-volume {
+  font-family: var(--font-body);
+  font-size: 0.82rem; /* FIX #11: de 0.78 a 0.82 */
+  color: var(--color-sub);
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+
+/* FIX #11: tamaños de fuente aumentados para legibilidad mobile */
+.card-desc {
+  font-size: 0.92rem; /* de 0.84rem */
+  color: var(--color-sub);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.nota {
+  font-size: 0.82rem; /* de 0.78 */
+  color: var(--rojo);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.card-price-wrap {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-price-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Card Featured ──────────────────────────────────────────── */
+.card-featured {
+  border: 3px solid var(--rojo);
+  box-shadow: 6px 6px 0 var(--rojo);
+}
+
+.card-featured .card-title { font-size: 1.6rem; color: var(--rojo); }
+.card-featured .price { font-size: 2rem; }
+
+/* ─── Card Sunday ────────────────────────────────────────────── */
+.sunday-badge {
+  display: inline-block;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem; /* FIX #11: de 0.7 a 0.72 */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.card-sunday {
+  border-color: var(--rojo);
+  box-shadow: 5px 5px 0 rgba(139,0,0,0.4);
+}
+
+/* ─── Card Mini ──────────────────────────────────────────────── */
+.card-mini .card-body { padding: 0.9rem 1rem 1rem; }
+.card-mini .card-title { font-size: 1rem; margin-bottom: 0.4rem; } /* FIX #11: de 0.95 a 1rem */
+
+/* ─── Card List (tacos) ──────────────────────────────────────── */
+.card-list { margin-bottom: var(--gap-md); }
+
+.taco-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.taco-list li {
+  font-size: 0.95rem; /* FIX #11: de 0.9 a 0.95 */
+  color: var(--color-sub);
+  padding: 0.35rem 0; /* FIX #19: área táctil más grande */
+  border-bottom: 1px dashed rgba(62,39,35,0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.taco-list li:last-child { border-bottom: none; }
+.bullet-chile { font-size: 0.8rem; } /* FIX #11: de 0.75 a 0.8 */
+
+/* ─── Badge ───────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  background: var(--rojo);
+  color: var(--hueso);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.68rem; /* FIX #11: de 0.65 a 0.68 */
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 0.6rem;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.badge-star { background: var(--dorado); color: var(--cafe-cuero); }
+
+/* ─── Mojito Flavors ──────────────────────────────────────────── */
+.mojito-flavors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.flavor {
+  background: rgba(74,94,42,0.1);
+  border: 1px solid var(--verde-olivo);
+  color: var(--verde-olivo);
+  font-family: var(--font-body);
+  font-size: 0.82rem; /* FIX #11: de 0.78 a 0.82 */
+  font-weight: 700;
+  padding: 0.3rem 0.65rem; /* FIX #11: un poco más de padding */
+  border-radius: 0;
+  box-shadow: 1px 1px 0 var(--verde-olivo);
+}
+
+/* ─── Size Prices ─────────────────────────────────────────────── */
+.size-prices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* FIX #11: de 0.2 a 0.25 */
+  margin-top: 0.5rem;
+}
+
+.size-prices--big { gap: 0.4rem; margin-top: 0.75rem; }
+
+.size-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px dotted rgba(62,39,35,0.2);
+  padding-bottom: 0.25rem; /* FIX #11: de 0.2 a 0.25 */
+}
+
+.size-row:last-child { border-bottom: none; }
+
+/* FIX #11: size-label de 0.82 a 0.9rem */
+.size-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-sub);
+  font-style: italic;
+  flex: 1;
+}
+
+.size-prices .price     { font-size: 1.2rem; }  /* FIX #11: de 1.15 a 1.2 */
+.size-prices--big .price { font-size: 1.4rem; }
+
+/* ─── Mojito Card Special ─────────────────────────────────────── */
+.card-mojito {
+  border-color: var(--verde-olivo);
+  box-shadow: 6px 6px 0 var(--verde-olivo);
+  margin-bottom: var(--gap-md);
+}
+
+.card-mojito .card-title { color: var(--verde-olivo); }
+
+/* ─── Featured card accent bar ───────────────────────────────── */
+.card-featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  width: 100%; /* override el 40px del card::before base */
+  background: linear-gradient(90deg, var(--rojo), var(--naranja), var(--dorado), var(--naranja), var(--rojo));
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── FIX D: Testimonios ─────────────────────────────────────── */
+.section-testimonios .cards-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 500px) {
+  .section-testimonios .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+.card-testimonio {
+  position: relative;
+  border-style: dashed;
+}
+
+.card-testimonio::before {
+  /* Sobreescribir la textura de hatching con la comilla */
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 0.75rem;
+  font-family: var(--font-title);
+  font-size: 4rem;
+  color: var(--naranja);
+  opacity: 0.3;
+  line-height: 1;
+  pointer-events: none;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.testimonio-texto {
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--color-texto);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+  padding-top: 1rem;
+}
+
+.testimonio-autor {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--naranja);
+}
+
+.testimonio-estrellas {
+  color: var(--dorado);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ─── FIX E: Galería de ambiente ─────────────────────────────── */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.5rem;
+}
+
+.galeria-grid .galeria-item:first-child {
+  grid-row: 1 / 3;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border: var(--border-main);
+  box-shadow: var(--shadow-hard-sm);
+  aspect-ratio: 1;
+  background: var(--cafe-medio);
+}
+
+.galeria-item:first-child {
+  aspect-ratio: unset;
+}
+
+.galeria-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+@media (hover: hover) {
+  .galeria-item:hover .galeria-img {
+    transform: scale(1.06);
+    filter: saturate(1.3) contrast(1.05);
+  }
+}
+
+/* ─── RESPONSIVE FINAL ────────────────────────────────────────── */
+
+/* Extra touch targets en mobile para todos los botones */
+@media (max-width: 600px) {
+  .btn-add {
+    min-height: 44px; /* iOS touch target mínimo */
+    font-size: 0.85rem;
+  }
+
+  .qty-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+}
