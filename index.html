@@ -1,57 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Las Pecadoras — Menú digital. Parrilla, mariscos, coctelería y mucho sabor de hacienda." />
+  <meta name="description"
+    content="Las Pecadoras — Menú digital. Parrilla, mariscos, coctelería y el nuevo Cantarito de 10 litros. Santuario de sabor." />
   <title>Las Pecadoras — Menú</title>
 
-  <!-- Open Graph — preview en WhatsApp, Facebook, Instagram -->
-  <meta property="og:title"       content="Las Pecadoras — Menú" />
-  <meta property="og:description" content="Parrilla · Mariscos · Coctelería. Santuario de sabor." />
-  <meta property="og:type"        content="website" />
-  <meta property="og:image"       content="assets/img/logo/logo_pecadoras.png" />
-  <meta property="og:locale"      content="es_MX" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Las Pecadoras — Menú" />
+  <meta property="og:description" content="Parrilla · Mariscos · Coctelería · El Cantarito. Santuario de sabor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/logo/logo_pecadoras.png" />
+  <meta property="og:locale" content="es_MX" />
 
   <!-- Twitter/X card -->
-  <meta name="twitter:card"        content="summary" />
-  <meta name="twitter:title"       content="Las Pecadoras — Menú" />
-  <meta name="twitter:description" content="Parrilla · Mariscos · Coctelería." />
-  <meta name="twitter:image"       content="assets/img/logo/logo_pecadoras.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Las Pecadoras — Menú" />
+  <meta name="twitter:description" content="Parrilla · Mariscos · Coctelería · El Cantarito." />
+  <meta name="twitter:image" content="assets/img/logo/logo_pecadoras.png" />
 
-  <!-- Favicon — usa el logo como icono de pestaña -->
-  <link rel="icon"             href="assets/img/logo/logo_pecadoras.png" type="image/png" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/logo/logo_pecadoras.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/img/logo/logo_pecadoras.png" />
 
-  <!-- FIX: sin Pacifico (no se usa), font-display=swap evita FOIT -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Rye&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Rye&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/components.css" />
 </head>
+
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader">
-    <div class="loader-ring">
-      <div class="loader-blob"></div>
+  <!-- ═══════════════════════════════════════════════════════
+       PRELOADER RENOVADO — Logo + barra de progreso
+  ═══════════════════════════════════════════════════════ -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo-wrap">
+        <img src="assets/img/logo/logo_pecadoras.png" alt="" class="preloader-logo"
+          onerror="this.style.display='none'" />
+        <div class="preloader-logo-ring"></div>
+      </div>
+      <p class="preloader-name">Las Pecadoras</p>
+      <p class="preloader-tagline">Cargando el santuario…</p>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
     </div>
-    <p class="loader-text">Las Pecadoras</p>
+    <!-- Partículas de brasa de fondo -->
+    <span class="pre-ember pre-ember-1" aria-hidden="true"></span>
+    <span class="pre-ember pre-ember-2" aria-hidden="true"></span>
+    <span class="pre-ember pre-ember-3" aria-hidden="true"></span>
+    <span class="pre-ember pre-ember-4" aria-hidden="true"></span>
   </div>
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════ -->
   <header id="header" class="section-hero">
     <div class="hero-video-wrap">
       <video autoplay muted loop playsinline>
-     <source src="assets/video/parrilla-loop.mp4" type="video/mp4"> 
+        <source src="assets/video/parrilla-loop.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-grain"></div>
 
-    <!-- Brasas flotantes CSS — dan vida al hero sin JS -->
+    <!-- Brasas flotantes -->
     <span class="ember ember-1" aria-hidden="true"></span>
     <span class="ember ember-2" aria-hidden="true"></span>
     <span class="ember ember-3" aria-hidden="true"></span>
@@ -63,42 +85,151 @@
 
     <div class="hero-inner reveal">
       <div class="logo-wrap">
-        <img src="assets/img/logo/logo_pecadoras.png" alt="Logo Las Pecadoras" class="logo-img" onerror="this.style.display='none'" />
+        <img src="assets/img/logo/logo_pecadoras.png" alt="Logo Las Pecadoras" class="logo-img"
+          onerror="this.style.display='none'" />
         <div class="logo-fallback">
           <span class="logo-icon">✦</span>
         </div>
       </div>
       <h1 class="hero-title">Las Pecadoras</h1>
-      <p class="hero-sub">Santuario parrillero · Parrilla · Mariscos · Coctelería</p>
-      <div class="hero-divider">
-        <span class="rope-line">⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒⌒</span>
+      <p class="hero-sub">Santuario Parrillero · Hidalgo, México</p>
+
+      <!-- Pills de categorías — nuevo 2025 -->
+      <div class="hero-pills">
+        <span class="hero-pill">
+          <svg class="pill-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 1C8 1 5.5 5 5.5 8a2.5 2.5 0 005 0C10.5 5 8 1 8 1z" fill="currentColor" opacity=".85" />
+            <path d="M8 5c0 0-1.2 2-1.2 3a1.2 1.2 0 002.4 0C9.2 7 8 5 8 5z" fill="currentColor" />
+          </svg>
+          Parrilla
+        </span>
+        <span class="hero-pill">
+          <svg class="pill-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 9c.5-3 2.5-5 5-5s4.5 2 5 5H3z" stroke="currentColor" stroke-width="1.2" fill="none" />
+            <path d="M2.5 9.5h11M5 12c0 1 .5 2 3 2s3-1 3-2" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" />
+          </svg>
+          Mariscos
+        </span>
+        <span class="hero-pill hero-pill--new">
+          <svg class="pill-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.2" />
+            <path d="M6 5V4a2 2 0 014 0v1" stroke="currentColor" stroke-width="1.2" />
+            <path d="M8 8v3" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+          </svg>
+          Cantarito
+        </span>
+        <span class="hero-pill">
+          <svg class="pill-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 4h10v6a3 3 0 01-3 3H6a3 3 0 01-3-3V4z" stroke="currentColor" stroke-width="1.2" />
+            <path d="M13 6h1.5a1 1 0 010 2H13" stroke="currentColor" stroke-width="1.2" />
+            <path d="M3 7h10" stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 1" />
+          </svg>
+          Coctelería
+        </span>
       </div>
+
+      <!-- CTA Scroll -->
+      <a href="#cantarito" class="hero-cta" aria-label="Ver menú">
+        <span class="hero-cta-text">¡Nuevo Cantarito!</span>
+        <span class="hero-cta-arrow" aria-hidden="true">↓</span>
+      </a>
     </div>
   </header>
 
-  <!-- NAV STICKY — solo .nav-tabs tiene overflow, el nav raíz no -->
+  <!-- NAV STICKY -->
   <nav id="section-nav" aria-label="Secciones del menú">
     <div class="nav-tabs">
       <!-- Tabs generados automáticamente por scroll-reveal.js -->
     </div>
   </nav>
 
-  <!-- DARK TOGGLE — posición fija independiente del nav -->
-  <button class="dark-toggle" aria-label="Cambiar modo de color" title="Modo noche">🌙</button>
+  <!-- MODO OSCURO PERMANENTE — sin botón toggle -->
 
   <main>
 
+    <!-- ═══════════════════════════════════════════════════════
+         CANTARITO — PRIMERA SECCIÓN (LA NUEVA ESTRELLA)
+    ═══════════════════════════════════════════════════════ -->
+    <section id="cantarito" class="menu-section section-cantarito" data-nav-label="Cantarito">
+      <div class="cantarito-glow-ring" aria-hidden="true"></div>
+      <div class="section-label section-label--cantarito reveal">✦ ¡No te lo pierdas! ✦</div>
+      <div class="card card-cantarito reveal">
+
+        <!-- Imagen: guarda como assets/img/bebidas/cantarito_grande.jpg -->
+        <div class="card-img-wrap cantarito-img-wrap">
+          <img src="assets/img/bebidas/cantaritos.png" loading="eager" alt="El Cantarito — 10 Litros" class="card-img"
+            onerror="this.parentElement.classList.add('no-img')" />
+          <!-- Placeholder cuando no hay imagen -->
+          <div class="cantarito-placeholder" aria-hidden="true">
+            <span class="cantarito-icon-wrap">
+              <svg class="cantarito-svg-icon" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <!-- Cuerpo del cantarito -->
+                <path d="M14 18 Q10 28 10 38 Q10 52 24 54 Q38 52 38 38 Q38 28 34 18 Z" stroke="currentColor"
+                  stroke-width="2" fill="none" stroke-linejoin="round" />
+                <!-- Cuello y boca -->
+                <path d="M16 18 Q18 12 24 12 Q30 12 32 18" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" />
+                <!-- Asa -->
+                <path d="M38 28 Q46 28 46 36 Q46 44 38 44" stroke="currentColor" stroke-width="1.8" fill="none"
+                  stroke-linecap="round" />
+                <!-- Decoración central -->
+                <circle cx="24" cy="36" r="3" fill="currentColor" opacity="0.5" />
+                <path d="M18 30 Q24 26 30 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                  fill="none" />
+              </svg>
+            </span>
+            <span class="cantarito-placeholder-text">Pon tu foto
+              aquí<br><small>assets/img/bebidas/cantarito_grande.jpg</small></span>
+          </div>
+          <div class="cantarito-ribbon">NUEVO</div>
+        </div>
+
+        <div class="card-body cantarito-body">
+          <div class="badge badge-cantarito">
+            <svg class="badge-icon" viewBox="0 0 12 16" fill="currentColor" aria-hidden="true">
+              <path d="M6 0C6 0 3 4.5 3 7a3 3 0 006 0C9 4.5 6 0 6 0z" opacity=".9" />
+              <path d="M6 5c0 0-1.3 2-1.3 3a1.3 1.3 0 002.6 0C7.3 7 6 5 6 5z" />
+            </svg>
+            Lanzamiento Exclusivo
+            <svg class="badge-icon" viewBox="0 0 12 16" fill="currentColor" aria-hidden="true">
+              <path d="M6 0C6 0 3 4.5 3 7a3 3 0 006 0C9 4.5 6 0 6 0z" opacity=".9" />
+              <path d="M6 5c0 0-1.3 2-1.3 3a1.3 1.3 0 002.6 0C7.3 7 6 5 6 5z" />
+            </svg>
+          </div>
+          <h2 class="card-title cantarito-title">El Cantarito</h2>
+          <p class="card-volume cantarito-volume">¡10 Litros de pura fiesta!</p>
+          <p class="card-desc cantarito-desc">
+            Nuestro cantarito gigante llega cargado de sabor y actitud.
+            La bebida perfecta para compartir en grande — tequila, cítricos
+            y la magia de Las Pecadoras en cada sorbo.
+          </p>
+          <div class="cantarito-price-block">
+            <span class="cantarito-litros">10 Litros</span>
+            <span class="cantarito-price-tag">$800</span>
+          </div>
+          <p class="cantarito-cta">¡Pídelo para tu mesa y desata la fiesta!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         ★ ESPECIALIDAD DE LA CASA
+    ═══════════════════════════════════════════════════════ -->
     <section id="especialidad" class="menu-section section-especialidad" data-nav-label="Especialidad">
       <div class="section-label reveal">⌖ Especialidad de la Casa ⌖</div>
       <div class="card card-featured reveal">
         <div class="card-img-wrap">
-          <img src="assets/img/platillos/la-pecadora.jpg" loading="lazy" alt="La Pecadora" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          <img src="assets/img/platillos/la-pecadora.jpg" loading="lazy" alt="La Pecadora" class="card-img"
+            onerror="this.parentElement.classList.add('no-img')" />
         </div>
         <div class="card-body">
           <div class="badge badge-star">★ La Joya ★</div>
           <h2 class="card-title">La Pecadora</h2>
           <p class="card-volume">1 Litro</p>
-          <p class="card-desc">Cerveza perfectamente escarchada, acompañada de camarones frescos y la receta secreta que solo encontrarás aquí.</p>
+          <p class="card-desc">Cerveza perfectamente escarchada, acompañada de camarones frescos y la receta secreta que
+            solo encontrarás aquí.</p>
           <div class="card-price-wrap">
             <span class="price">$140</span>
           </div>
@@ -106,16 +237,19 @@
       </div>
     </section>
 
+    <!-- DOMINGOS -->
     <section id="domingos" class="menu-section section-domingos" data-nav-label="Domingos">
       <div class="section-label reveal">⌖ Domingos de Crudear ⌖</div>
       <div class="card card-sunday reveal">
         <div class="sunday-badge">Solo Domingos</div>
         <div class="card-img-wrap">
-          <img src="assets/img/platillos/pancita.jpg" loading="lazy" alt="Pancita de la Casa" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          <img src="assets/img/platillos/pancita.jpg" loading="lazy" alt="Pancita de la Casa" class="card-img"
+            onerror="this.parentElement.classList.add('no-img')" />
         </div>
         <div class="card-body">
           <h2 class="card-title">Pancita de la Casa</h2>
-          <p class="card-desc">El remedio infalible. Caldo tradicional preparado con el sazón de la casa para revivir el cuerpo.</p>
+          <p class="card-desc">El remedio infalible. Caldo tradicional preparado con el sazón de la casa para revivir el
+            cuerpo.</p>
           <div class="card-price-wrap">
             <span class="price">$90</span>
           </div>
@@ -123,30 +257,48 @@
       </div>
     </section>
 
+    <!-- PARRILLA -->
     <section id="parrilla" class="menu-section section-parrilla" data-nav-label="Parrilla">
       <div class="section-label reveal">⌖ De la Parrilla ⌖</div>
       <p class="section-sub reveal">Calidad de exportación en cada bocado.</p>
 
       <div class="card card-list reveal">
         <div class="card-img-wrap">
-          <img src="assets/img/platillos/tacos.jpg" alt="Tacos del Santuario parrillero" loading="lazy" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          <img src="assets/img/platillos/tacos.jpg" alt="Tacos del Santuario parrillero" loading="lazy" class="card-img"
+            onerror="this.parentElement.classList.add('no-img')" />
         </div>
         <div class="card-body">
           <h2 class="card-title">Tacos Individuales</h2>
           <p class="card-price-inline"><span class="price">$35</span> <span class="per">c/u</span></p>
           <ul class="taco-list">
-            <li><span class="bullet-chile">🌶</span> Arrachera</li>
-            <li><span class="bullet-chile">🌶</span> Chistorra</li>
-            <li><span class="bullet-chile">🌶</span> Chorizo Argentino</li>
-            <li><span class="bullet-chile">🌶</span> Aguja de Res</li>
-            <li><span class="bullet-chile">🌶</span> Costilla de Res</li>
+            <li><span class="bullet-chile" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"
+                  fill="currentColor">
+                  <path d="M4 1 L5 3.5 L7.5 4 L5.5 5.8 L6 8 L4 6.8 L2 8 L2.5 5.8 L0.5 4 L3 3.5 Z" />
+                </svg></span> Arrachera</li>
+            <li><span class="bullet-chile" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"
+                  fill="currentColor">
+                  <path d="M4 1 L5 3.5 L7.5 4 L5.5 5.8 L6 8 L4 6.8 L2 8 L2.5 5.8 L0.5 4 L3 3.5 Z" />
+                </svg></span> Chistorra</li>
+            <li><span class="bullet-chile" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"
+                  fill="currentColor">
+                  <path d="M4 1 L5 3.5 L7.5 4 L5.5 5.8 L6 8 L4 6.8 L2 8 L2.5 5.8 L0.5 4 L3 3.5 Z" />
+                </svg></span> Chorizo Argentino</li>
+            <li><span class="bullet-chile" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"
+                  fill="currentColor">
+                  <path d="M4 1 L5 3.5 L7.5 4 L5.5 5.8 L6 8 L4 6.8 L2 8 L2.5 5.8 L0.5 4 L3 3.5 Z" />
+                </svg></span> Aguja de Res</li>
+            <li><span class="bullet-chile" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"
+                  fill="currentColor">
+                  <path d="M4 1 L5 3.5 L7.5 4 L5.5 5.8 L6 8 L4 6.8 L2 8 L2.5 5.8 L0.5 4 L3 3.5 Z" />
+                </svg></span> Costilla de Res</li>
           </ul>
         </div>
       </div>
 
       <div class="card card-list reveal">
         <div class="card-img-wrap">
-          <img src="assets/img/platillos/hamburguesa.jpg" loading="lazy" alt="Hamburguesa de Arrachera" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          <img src="assets/img/platillos/hamburguesa.jpg" loading="lazy" alt="Hamburguesa de Arrachera" class="card-img"
+            onerror="this.parentElement.classList.add('no-img')" />
         </div>
         <div class="card-body">
           <h2 class="card-title">Hamburguesa de Arrachera</h2>
@@ -158,12 +310,14 @@
       </div>
     </section>
 
+    <!-- BOTANAS -->
     <section id="botanas" class="menu-section section-snacks" data-nav-label="Botanas">
       <div class="section-label reveal">⌖ Botanas y Snacks ⌖</div>
       <div class="cards-grid">
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/platillos/alitas.jpg" loading="lazy" alt="Alitas de Pollo" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/platillos/alitas.jpg" loading="lazy" alt="Alitas de Pollo" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Alitas de Pollo</h3>
@@ -176,7 +330,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/platillos/camarones.jpg" loading="lazy" alt="Botana de Camarones" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/platillos/camarones.jpg" loading="lazy" alt="Botana de Camarones" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Botana de Camarones</h3>
@@ -188,7 +343,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/platillos/papas_francesa.png" loading="lazy" alt="Papas a la Francesa" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/platillos/papas_francesa.png" loading="lazy" alt="Papas a la Francesa" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Papas a la Francesa</h3>
@@ -198,11 +354,10 @@
             </div>
           </div>
         </div>
-
-        <!-- NUEVO: Maruchan -->
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/platillos/maruchan.png" loading="lazy" alt="Maruchan" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/platillos/maruchan.png" loading="lazy" alt="Maruchan" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Maruchan</h3>
@@ -212,18 +367,17 @@
             </div>
           </div>
         </div>
-        <!-- FIN: Maruchan -->
-
       </div>
     </section>
 
+    <!-- ANTOJITOS -->
     <section id="antojitos" class="menu-section section-antojitos" data-nav-label="Antojitos">
       <div class="section-label reveal">⌖ Antojitos Locos ⌖</div>
       <div class="cards-grid">
-        
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/platillos/chicharrones.jpg" loading="lazy" alt="Chicharrones Preparados" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/platillos/chicharrones.jpg" loading="lazy" alt="Chicharrones Preparados"
+              class="card-img" onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Chicharrones Preparados</h3>
@@ -235,7 +389,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/platillos/papaslocas.png" loading="lazy" alt="Papas Locas" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/platillos/papaslocas.png" loading="lazy" alt="Papas Locas" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Papas Locas</h3>
@@ -247,19 +402,42 @@
       </div>
     </section>
 
+    <!-- CÓCTELES -->
     <section id="cocteles" class="menu-section section-cocteles" data-nav-label="Cócteles">
       <div class="section-label reveal">⌖ Coctelería de la Casa ⌖</div>
       <div class="card card-featured card-mojito reveal">
         <div class="card-img-wrap">
-          <img src="assets/img/bebidas/mojito.jpg" loading="lazy" alt="Mojitos Artesanales" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+          <img src="assets/img/bebidas/mojito.jpg" loading="lazy" alt="Mojitos Artesanales" class="card-img"
+            onerror="this.parentElement.classList.add('no-img')" />
         </div>
         <div class="card-body">
           <div class="badge">★ Mojitos ★</div>
           <h2 class="card-title">Mojitos Artesanales</h2>
           <div class="mojito-flavors">
-            <span class="flavor">🍃 Natural</span>
-            <span class="flavor">🍓 Frutos Rojos</span>
-            <span class="flavor">🥭 Mango</span>
+            <span class="flavor">
+              <svg class="flavor-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 12 C7 12 2 9 2 5 Q2 1 7 2 Q12 1 12 5 C12 9 7 12 7 12Z" stroke="currentColor"
+                  stroke-width="1.2" fill="none" />
+                <path d="M7 12 L7 4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" />
+              </svg>
+              Natural
+            </span>
+            <span class="flavor">
+              <svg class="flavor-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="5" cy="7" r="3" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="9" cy="5" r="2.5" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="9" cy="9" r="2.5" stroke="currentColor" stroke-width="1.2" />
+              </svg>
+              Frutos Rojos
+            </span>
+            <span class="flavor">
+              <svg class="flavor-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 5 Q2 2 7 2 Q12 2 12 5 L11 11 Q7 13 3 11 Z" stroke="currentColor" stroke-width="1.2"
+                  fill="none" />
+                <path d="M7 2 Q9 0 11 1" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+              </svg>
+              Mango
+            </span>
           </div>
           <div class="size-prices size-prices--big">
             <div class="size-row"><span class="size-label">½ Litro</span><span class="price">$70</span></div>
@@ -270,7 +448,8 @@
       <div class="cards-grid">
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/p_colada.png" loading="lazy" alt="Piñas Coladas" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/p_colada.png" loading="lazy" alt="Piñas Coladas" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Piñas Coladas</h3>
@@ -282,7 +461,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/mediasdeseda.png" loading="lazy" alt="Medias de Seda" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/mediasdeseda.png" loading="lazy" alt="Medias de Seda" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Medias de Seda</h3>
@@ -294,7 +474,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/azulitos.png" loading="lazy" alt="Pitufos / Azulitos" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/azulitos.png" loading="lazy" alt="Pitufos / Azulitos" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Pitufos / Azulitos</h3>
@@ -304,10 +485,10 @@
             </div>
           </div>
         </div>
-
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/cantaritos.png" loading="lazy" alt="Cantarito" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/cantaritos.png" loading="lazy" alt="Cantarito" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Cantarito</h3>
@@ -317,16 +498,17 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
+    <!-- CERVEZAS -->
     <section id="cervezas" class="menu-section section-cervezas" data-nav-label="Cervezas">
       <div class="section-label reveal">⌖ Cervecería y Tarros ⌖</div>
       <div class="cards-grid">
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/tarro-cerveza.jpg" loading="lazy" alt="Tarro de Cerveza" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/tarro-cerveza.jpg" loading="lazy" alt="Tarro de Cerveza" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Tarro de Cerveza</h3>
@@ -338,7 +520,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/tarro_cubano.png" loading="lazy" alt="Tarro Cubano" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/tarro_cubano.png" loading="lazy" alt="Tarro Cubano" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Tarro Cubano</h3>
@@ -350,7 +533,8 @@
         </div>
         <div class="card card-mini reveal">
           <div class="card-img-wrap">
-            <img src="assets/img/bebidas/tarro_clamato.png" loading="lazy" alt="Tarro Clamato" class="card-img" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="assets/img/bebidas/tarro_clamato.png" loading="lazy" alt="Tarro Clamato" class="card-img"
+              onerror="this.parentElement.classList.add('no-img')" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Tarro Clamato</h3>
@@ -363,6 +547,7 @@
       </div>
     </section>
 
+    <!-- BEBIDAS FRÍAS -->
     <section id="bebidas" class="menu-section section-bebidas" data-nav-label="Bebidas">
       <div class="section-label reveal">⌖ Bebidas Frías ⌖</div>
       <p class="section-sub reveal">Presentación en botella de vidrio</p>
@@ -390,52 +575,104 @@
       </div>
     </section>
 
+    <!-- GALERÍA -->
     <section id="galeria" class="menu-section" data-nav-label="Galería">
       <div class="section-label reveal">⌖ El Ambiente ⌖</div>
       <div class="galeria-grid reveal">
         <div class="galeria-item">
-          <img src="assets/img/ambiente/ambientecuatro.png" loading="lazy" alt="Ambiente Las Pecadoras" class="galeria-img" onerror="this.parentElement.style.background='var(--cafe-medio)'" />
+          <img src="assets/img/ambiente/ambientecuatro.png" loading="lazy" alt="Ambiente Las Pecadoras"
+            class="galeria-img" onerror="this.parentElement.style.background='var(--cafe-medio)'" />
         </div>
         <div class="galeria-item">
-          <img src="assets/img/ambiente/ambientecinco.png" loading="lazy" alt="Parrilla encendida" class="galeria-img" onerror="this.parentElement.style.background='var(--rojo)'" />
+          <img src="assets/img/ambiente/ambientecinco.png" loading="lazy" alt="Parrilla encendida" class="galeria-img"
+            onerror="this.parentElement.style.background='var(--rojo)'" />
         </div>
         <div class="galeria-item">
-          <img src="assets/img/ambiente/ambienteuno.png" loading="lazy"  alt="Clientes disfrutando" class="galeria-img" onerror="this.parentElement.style.background='var(--naranja)'" />
+          <img src="assets/img/ambiente/ambienteuno.png" loading="lazy" alt="Clientes disfrutando" class="galeria-img"
+            onerror="this.parentElement.style.background='var(--naranja)'" />
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER RENOVADO
+  ═══════════════════════════════════════════════════════ -->
   <footer id="footer" class="reveal">
     <div class="footer-inner">
       <div class="footer-brand">
+        <!-- Icono llama SVG -->
+        <svg class="footer-flame" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C12 2 8 7 8 11a4 4 0 008 0c0-4-4-9-4-9z" fill="var(--naranja)" opacity=".9" />
+          <path d="M12 8c0 0-2 3-2 5a2 2 0 004 0c0-2-2-5-2-5z" fill="var(--dorado)" />
+        </svg>
         <p class="footer-title">Las Pecadoras</p>
         <p class="footer-tagline">Santuario de Sabor desde el primer bocado</p>
       </div>
+
       <div class="footer-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=19.713718,-98.791930"
-           target="_blank"
-           rel="noopener"
-           class="btn btn-maps">
-          <span>📍</span> Ver ubicación en Maps
+        <a href="https://www.google.com/maps/search/?api=1&query=19.713718,-98.791930" target="_blank" rel="noopener"
+          class="btn btn-maps">
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              fill="currentColor" />
+          </svg>
+          Ver ubicación en Maps
         </a>
+
         <div class="social-links">
-          <a href="https://www.facebook.com/share/1DG4hic6LW/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">f</a>
-          <a href="https://www.instagram.com/laspecadoras21?igsh=MWtndjJobnNqeW84bA==" class="social-link" aria-label="Instagram">ig</a>
-          <a href="https://wa.me/5215569004323" class="social-link" aria-label="WhatsApp">wa</a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/share/1DG4hic6LW/?mibextid=wwXIfr" class="social-link social-link--fb"
+            aria-label="Facebook de Las Pecadoras" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/laspecadoras21?igsh=MWtndjJobnNqeW84bA=="
+            class="social-link social-link--ig" aria-label="Instagram de Las Pecadoras" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"
+              aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5215569004323" class="social-link social-link--wa"
+            aria-label="WhatsApp de Las Pecadoras" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
         </div>
       </div>
-      <p class="footer-copy">© 2025 Las Pecadoras · Todos los derechos reservados</p>
+
+      <p class="footer-copy">© 2026 Las Pecadoras · Todos los derechos reservados</p>
     </div>
   </footer>
 
+  <!-- BANDA PRODUCIDO POR — Colibrí EXE -->
+  <!-- Coloca tu logo en: assets/img/logo/colibri_exe.png -->
+  <div class="producido-por">
+    <span class="producido-por__texto">Producido por</span>
+    <a href="https://www.instagram.com/colibrix.bi?igsh=MTlpZzFvdHF1eXQxcg==klhchy" target="_blank" rel="noopener"
+      class="producido-por__link" aria-label="Colibrí EXE — Sitio web" title="Visita Colibrí EXE">
+      <img src="assets/img/logo/colibri.png" alt="Colibrí EXE" class="producido-por__logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+      <span class="producido-por__nombre" style="display:none;">ColibríX BI</span>
+    </a>
+  </div>
+
   <!-- FAB WhatsApp -->
   <a href="https://wa.me/5215569004323?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20en%20Las%20Pecadoras.%20¿Me%20pueden%20ayudar?"
-     target="_blank" rel="noopener" class="fab-whatsapp" aria-label="Pide por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    target="_blank" rel="noopener" class="fab-whatsapp" aria-label="Pide por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
     <span class="fab-label">¡Pide tu pecado aquí!</span>
   </a>
@@ -443,4 +680,5 @@
   <script src="js/loader.js"></script>
   <script src="js/scroll-reveal.js"></script>
 </body>
+
 </html>

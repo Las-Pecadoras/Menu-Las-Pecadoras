@@ -1,60 +1,44 @@
 /* ═══════════════════════════════════════════════════════════════
-   LAS PECADORAS — animations.css
-   Experiencia mobile-first: cinematográfica, táctil, memorable.
+   LAS PECADORAS — animations.css  (Renovación 2025)
+   Micro-interacciones cinematográficas, táctiles y memorables.
 ═══════════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════════════════════════════════
-   1. PRELOADER — Blob de brasa con explosión de salida
+   1. PRELOADER — Logo + anillo giratorio + barra de progreso
 ══════════════════════════════════════════════════════════════ */
 
-@keyframes blobPulse {
-  0%, 100% {
-    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-    transform: scale(1);
-  }
-  33% {
-    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
-    transform: scale(1.08);
-  }
-  66% {
-    border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%;
-    transform: scale(0.95);
-  }
-}
-
-@keyframes blobSpin {
+@keyframes preloaderRingSpin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 
-@keyframes blobGlow {
-  0%, 100% { box-shadow: 0 0 24px 4px rgba(211,84,0,0.45), 0 0 60px 10px rgba(211,84,0,0.15); }
-  50%       { box-shadow: 0 0 40px 10px rgba(211,84,0,0.7), 0 0 90px 20px rgba(211,84,0,0.25); }
+@keyframes preloaderLogoIn {
+  0%   { opacity: 0; transform: scale(0.6) rotate(-8deg); filter: blur(4px); }
+  60%  { opacity: 1; transform: scale(1.05) rotate(1deg); filter: blur(0); }
+  80%  { transform: scale(0.97) rotate(-0.5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-.loader-blob {
-  animation: blobPulse 1.8s ease-in-out infinite,
-             blobSpin  3s linear infinite,
-             blobGlow  2.2s ease-in-out infinite;
+@keyframes preloaderNameIn {
+  from { opacity: 0; transform: translateY(10px); letter-spacing: 0.05em; }
+  to   { opacity: 1; transform: translateY(0); letter-spacing: 0.18em; }
 }
 
-@keyframes blobExpand {
-  0%   { transform: scale(1);  opacity: 1; }
-  50%  { transform: scale(8);  opacity: 0.8; }
-  100% { transform: scale(28); opacity: 0; }
+@keyframes preloaderTagIn {
+  from { opacity: 0; }
+  to   { opacity: 0.7; }
 }
 
-.loader-blob.explode {
-  animation: blobExpand 0.7s ease-in forwards !important;
+.preloader-logo-wrap {
+  animation: preloaderLogoIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
-@keyframes loaderTextIn {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 0.9; transform: translateY(0); letter-spacing: 0.15em; }
+.preloader-name {
+  animation: preloaderNameIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
-.loader-text {
-  animation: loaderTextIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+.preloader-tagline {
+  animation: preloaderTagIn 0.5s ease 0.9s both;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -82,18 +66,19 @@
 }
 
 @keyframes logoBreathe {
-  0%, 100% { box-shadow: 0 0 0 6px rgba(211,84,0,0.2), 4px 4px 0 var(--cafe-cuero); }
-  50%       { box-shadow: 0 0 0 11px rgba(211,84,0,0.1), 4px 4px 0 var(--cafe-cuero); }
+  0%, 100% { box-shadow: 0 0 0 5px rgba(232,96,26,0.15), 0 0 0 10px rgba(232,96,26,0.05), var(--shadow-hard); }
+  50%       { box-shadow: 0 0 0 9px rgba(232,96,26,0.1),  0 0 0 18px rgba(232,96,26,0.03), var(--shadow-hard); }
 }
 
 .logo-wrap {
   animation: stampIn     0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both,
-             logoBreathe 3.5s ease-in-out 1.4s infinite;
+             logoBreathe 4s ease-in-out 1.4s infinite;
 }
 
 .hero-title   { animation: inkReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both; }
 .hero-sub     { animation: slideUp   0.6s ease 1.05s both; }
-.hero-divider { animation: slideUp   0.5s ease 1.25s both; }
+.hero-pills   { animation: slideUp   0.55s ease 1.2s both; }
+.hero-cta     { animation: slideUp   0.5s ease 1.4s both; }
 
 /* ══════════════════════════════════════════════════════════════
    3. BRASAS FLOTANTES en el hero (CSS puro)
@@ -101,9 +86,9 @@
 
 @keyframes emberFloat {
   0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
-  8%   { opacity: 0.75; }
-  85%  { opacity: 0.35; }
-  100% { transform: translateY(-130px) translateX(var(--drift)) scale(0.2); opacity: 0; }
+  8%   { opacity: 0.8; }
+  85%  { opacity: 0.3; }
+  100% { transform: translateY(-140px) translateX(var(--drift)) scale(0.15); opacity: 0; }
 }
 
 .ember {
@@ -133,9 +118,9 @@
 
 .reveal {
   opacity: 0;
-  transform: translateY(34px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(30px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
@@ -143,9 +128,9 @@
   transform: translateY(0);
 }
 
-/* Cards: spring bounce — se sienten físicas */
+/* Cards: spring bounce físico */
 .card.reveal {
-  transform: translateY(42px) scale(0.96);
+  transform: translateY(44px) scale(0.97);
   transition: opacity  0.65s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -157,10 +142,10 @@
 
 /* Section labels: expand desde el centro */
 .section-label.reveal {
-  transform: scaleX(0.82) translateY(10px);
+  transform: scaleX(0.75) translateY(10px);
   transform-origin: center;
   transition: opacity  0.5s ease,
-              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-label.reveal.visible {
@@ -168,34 +153,22 @@
   transform: scaleX(1) translateY(0);
 }
 
-/* Hijos escalonados */
-.reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(22px) scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1);
-}
-
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.14s; opacity: 1; transform: none; }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.23s; opacity: 1; transform: none; }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.32s; opacity: 1; transform: none; }
-
 /* ══════════════════════════════════════════════════════════════
-   5. PRICE STAMP — Sello de tinta con "plop" físico
+   5. PRICE STAMP — Sello de tinta con plop físico
 ══════════════════════════════════════════════════════════════ */
 
 @keyframes priceStamp {
-  0%   { opacity: 0; transform: scale(2.1) rotate(-7deg); filter: blur(5px); color: var(--cafe-cuero); }
-  42%  { opacity: 1; transform: scale(0.87) rotate(1.8deg); filter: blur(0); color: var(--rojo); }
+  0%   { opacity: 0; transform: scale(2.2) rotate(-8deg); filter: blur(5px); }
+  42%  { opacity: 1; transform: scale(0.88) rotate(2deg); filter: blur(0); }
   62%  { transform: scale(1.07) rotate(-0.6deg); }
   80%  { transform: scale(0.97) rotate(0.2deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); color: var(--rojo); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
 @keyframes inkSplat {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-  28%  { opacity: 0.18; transform: translate(-50%, -50%) scale(1.4); }
-  65%  { opacity: 0.07; transform: translate(-50%, -50%) scale(1.1); }
+  28%  { opacity: 0.15; transform: translate(-50%, -50%) scale(1.4); }
+  65%  { opacity: 0.05; transform: translate(-50%, -50%) scale(1.1); }
   100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
 }
 
@@ -211,7 +184,6 @@
 }
 
 .price-wrap-anim::before {
-  content: 'DOLLAR';
   content: '\25CF';
   position: absolute;
   top: 50%; left: 50%;
@@ -227,30 +199,29 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   6. CARDS — Micro-interacciones táctiles
+   6. CARDS — Micro-interacciones táctiles mejoradas
 ══════════════════════════════════════════════════════════════ */
 
 .card {
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.2s ease;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.22s ease;
   will-change: transform;
 }
 
 @media (hover: hover) {
   .card:hover {
-    transform: translate(-3px, -4px) rotate(-0.3deg);
-    box-shadow: 7px 8px 0 var(--cafe-cuero);
+    transform: translate(-3px, -4px) rotate(-0.2deg);
+    box-shadow: 7px 8px 0 rgba(0,0,0,0.6), 0 0 20px rgba(232,96,26,0.1);
   }
   .card:hover .card-img {
     transform: scale(1.05);
-    filter: saturate(1.3) contrast(1.06);
+    filter: saturate(1.35) contrast(1.08);
   }
 }
 
-/* Touch — se hunde como papel real */
 .card:active {
   transform: translate(2px, 2px) scale(0.975) !important;
-  box-shadow: 1px 1px 0 var(--cafe-cuero) !important;
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.5) !important;
   transition: transform 0.07s ease, box-shadow 0.07s ease !important;
 }
 
@@ -264,15 +235,15 @@
 ══════════════════════════════════════════════════════════════ */
 
 @keyframes tacoItemIn {
-  from { opacity: 0; transform: translateX(-14px); }
+  from { opacity: 0; transform: translateX(-16px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
-.card.reveal.visible .taco-list li:nth-child(1) { animation: tacoItemIn 0.32s ease 0.12s both; }
-.card.reveal.visible .taco-list li:nth-child(2) { animation: tacoItemIn 0.32s ease 0.20s both; }
-.card.reveal.visible .taco-list li:nth-child(3) { animation: tacoItemIn 0.32s ease 0.28s both; }
-.card.reveal.visible .taco-list li:nth-child(4) { animation: tacoItemIn 0.32s ease 0.36s both; }
-.card.reveal.visible .taco-list li:nth-child(5) { animation: tacoItemIn 0.32s ease 0.44s both; }
+.card.reveal.visible .taco-list li:nth-child(1) { animation: tacoItemIn 0.32s ease 0.10s both; }
+.card.reveal.visible .taco-list li:nth-child(2) { animation: tacoItemIn 0.32s ease 0.18s both; }
+.card.reveal.visible .taco-list li:nth-child(3) { animation: tacoItemIn 0.32s ease 0.26s both; }
+.card.reveal.visible .taco-list li:nth-child(4) { animation: tacoItemIn 0.32s ease 0.34s both; }
+.card.reveal.visible .taco-list li:nth-child(5) { animation: tacoItemIn 0.32s ease 0.42s both; }
 
 /* ══════════════════════════════════════════════════════════════
    8. MOJITO CHIPS — Rebotan al entrar
@@ -280,7 +251,7 @@
 
 @keyframes chipBounce {
   0%   { opacity: 0; transform: scale(0.5) translateY(10px); }
-  65%  { transform: scale(1.1) translateY(-3px); }
+  65%  { transform: scale(1.12) translateY(-3px); }
   85%  { transform: scale(0.97) translateY(0); }
   100% { opacity: 1; transform: scale(1) translateY(0); }
 }
@@ -294,7 +265,7 @@
 ══════════════════════════════════════════════════════════════ */
 
 @keyframes rowSlideIn {
-  from { opacity: 0; transform: translateX(-18px); }
+  from { opacity: 0; transform: translateX(-20px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
@@ -323,7 +294,7 @@
 
 .fab-whatsapp {
   animation: fabEntrada 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 1.9s both,
-             fabRing    2.8s ease-in-out 3s infinite;
+             fabRing    3s ease-in-out 3s infinite;
 }
 
 .fab-whatsapp:active {
@@ -337,47 +308,24 @@
    11. NAV — Indicador activo + flash táctil
 ══════════════════════════════════════════════════════════════ */
 
-.nav-tab { transition: color 0.22s ease; }
-
-.nav-tab::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--naranja);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.nav-tab.active::after { transform: scaleX(1); }
+.nav-tab { transition: color 0.22s ease, background 0.22s ease; }
 
 @keyframes tabFlash {
-  0%   { background: rgba(211,84,0,0); }
-  25%  { background: rgba(211,84,0,0.18); }
-  100% { background: rgba(211,84,0,0); }
+  0%   { background: rgba(232,96,26,0); }
+  25%  { background: rgba(232,96,26,0.15); }
+  100% { background: rgba(232,96,26,0); }
 }
 
 .nav-tab:active { animation: tabFlash 0.28s ease forwards; }
 
-/* ══════════════════════════════════════════════════════════════
-   12. DARK TOGGLE — Spin con spring
-══════════════════════════════════════════════════════════════ */
-
-@keyframes toggleSpin {
-  0%   { transform: rotate(0deg) scale(1); }
-  35%  { transform: rotate(190deg) scale(1.3); }
-  65%  { transform: rotate(330deg) scale(0.88); }
-  82%  { transform: rotate(355deg) scale(1.05); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-.dark-toggle.spinning {
-  animation: toggleSpin 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+/* Punto "nuevo" en la tab Cantarito */
+@keyframes newDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   13. SUNDAY BADGE — Shimmer de fuego
+   12. SUNDAY BADGE — Shimmer de fuego
 ══════════════════════════════════════════════════════════════ */
 
 @keyframes shimmer {
@@ -388,14 +336,14 @@
 .sunday-badge {
   background: linear-gradient(
     90deg,
-    var(--rojo) 0%, #C0392B 30%, #FF6242 50%, #C0392B 70%, var(--rojo) 100%
+    var(--rojo) 0%, #b03020 30%, #FF6040 50%, #b03020 70%, var(--rojo) 100%
   );
   background-size: 200% auto;
   animation: shimmer 2.8s linear infinite;
 }
 
 /* ══════════════════════════════════════════════════════════════
-   14. FEATURED CARD — Barra superior shimmer dorado
+   13. FEATURED CARD — Barra superior shimmer dorado
 ══════════════════════════════════════════════════════════════ */
 
 .card-featured::before {
@@ -406,7 +354,7 @@
   width: 100%;
   background: linear-gradient(
     90deg,
-    var(--rojo), var(--naranja), var(--dorado), var(--naranja), var(--rojo)
+    var(--rojo), var(--naranja), var(--dorado), var(--dorado-claro), var(--dorado), var(--naranja), var(--rojo)
   );
   background-size: 200% auto;
   animation: shimmer 3.2s linear infinite;
@@ -415,7 +363,7 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   15. FOOTER — Reveal dramático
+   14. FOOTER — Reveal dramático
 ══════════════════════════════════════════════════════════════ */
 
 #footer.reveal {
@@ -429,21 +377,45 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   16. HERO DIVIDER — Ondula como cuerda
+   15. CANTARITO — Animaciones especiales
 ══════════════════════════════════════════════════════════════ */
 
-@keyframes ropeWave {
-  0%, 100% { letter-spacing: -0.12em; opacity: 0.55; }
-  50%       { letter-spacing: -0.06em; opacity: 0.38; }
+@keyframes cantaritoGlowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,96,26,0); border-color: rgba(232,96,26,0.12); }
+  50%       { box-shadow: 0 0 35px 6px rgba(232,96,26,0.2); border-color: rgba(232,96,26,0.45); }
 }
 
-.hero-divider .rope-line {
-  display: inline-block;
-  animation: ropeWave 4.5s ease-in-out infinite;
+@keyframes cantaritoLabelBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+@keyframes cantaritoFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes ribbonShine {
+  0%, 100% { filter: brightness(1); }
+  50%       { filter: brightness(1.35); }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   17. SECTION TRANSITIONS
+   16. HERO PILLS y CTA
+══════════════════════════════════════════════════════════════ */
+
+@keyframes pillGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,160,23,0); border-color: rgba(212,160,23,0.5); }
+  50%       { box-shadow: 0 0 12px 2px rgba(212,160,23,0.3); border-color: rgba(212,160,23,0.9); }
+}
+
+@keyframes ctaArrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   17. GALERÍA
 ══════════════════════════════════════════════════════════════ */
 
 .menu-section { transition: background-color 0.5s ease; }
@@ -457,16 +429,19 @@
     transform: none !important;
     transition: opacity 0.3s ease !important;
   }
-  .logo-wrap, .hero-title, .hero-sub, .hero-divider {
+  .logo-wrap, .hero-title, .hero-sub, .hero-pills, .hero-cta {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
-  .ember { animation: none !important; opacity: 0 !important; }
+  .ember, .pre-ember { animation: none !important; opacity: 0 !important; }
   .card { transition: none !important; }
   .card:active { transform: none !important; }
   .price.price-visible { animation: none !important; opacity: 1 !important; }
   .price-wrap-anim.price-visible::before { animation: none !important; }
   .fab-whatsapp { animation: none !important; opacity: 1; }
   .sunday-badge { animation: shimmer 5s linear infinite; }
+  .cantarito-glow-ring { animation: none !important; }
+  .cantarito-emoji { animation: none !important; }
+  .preloader-logo-ring { animation: none !important; }
 }

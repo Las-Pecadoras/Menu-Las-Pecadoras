@@ -1,177 +1,96 @@
 /* ═══════════════════════════════════════════════════════════════
-   LAS PECADORAS — main.css
-   Paleta Hacienda · Tipografía Taberna · Superficie de Adobe
+   LAS PECADORAS — main.css  (Renovación 2025)
+   Paleta Hacienda Nocturna · Tipografía Taberna · Adobe Oscuro
 ═══════════════════════════════════════════════════════════════ */
 
-/* ─── CSS Custom Properties — Modo Día ─────────────────────── */
+/* ─── Variables globales — siempre modo oscuro ─────────────────── */
 :root {
-  /* Colores base */
-  --hueso:       #F5EEDC;
-  --hueso-oscuro:#EDE0C4;
-  --rojo:        #8B0000;
-  --rojo-claro:  #A52929;
-  --naranja:     #D35400;
-  --dorado:      #C9920A;
-  --cafe-cuero:  #3E2723;
-  --cafe-medio:  #5D3A1A;
-  --cafe-claro:  #8D5524;
-  --verde-olivo: #4A5E2A;
-  --tinta:       #1A0F00;
-  --crema-carta: #FAF3E0;
+  /* Paleta refinada 2025 */
+  --hueso:        #F2E8D0;
+  --hueso-oscuro: #DDD0B3;
+  --rojo:         #C0392B;
+  --rojo-claro:   #E74C3C;
+  --naranja:      #E8601A;
+  --dorado:       #D4A017;
+  --dorado-claro: #F0C040;
+  --cafe-cuero:   #3E2723;
+  --cafe-medio:   #5D3A1A;
+  --cafe-claro:   #8D5524;
+  --verde-olivo:  #4A5E2A;
+  --tinta:        #F2E8D0;
+  --crema-carta:  #1C1208;
 
-  /* Tokens semánticos (se sobreescriben en dark mode) */
-  --bg-body:       var(--hueso);
-  --bg-carta:      var(--crema-carta);
-  --bg-hero:       var(--cafe-cuero);
-  --bg-footer:     var(--cafe-cuero);
-  --color-texto:   var(--tinta);
-  --color-sub:     var(--cafe-medio);
-  --border-color:  var(--cafe-cuero);
-  --shadow-color:  var(--cafe-cuero);
-  --section-label-color: var(--rojo);
-  --divider-color: var(--rojo);
+  /* Tokens semánticos — siempre dark */
+  --bg-body:       #0f0a04;
+  --bg-carta:      #1a1108;
+  --bg-hero:       #0a0603;
+  --bg-footer:     #080402;
+  --color-texto:   #F2E8D0;
+  --color-sub:     #C9A87A;
+  --border-color:  #8B6914;
+  --shadow-color:  rgba(0,0,0,0.7);
+  --section-label-color: #E8601A;
+  --divider-color: #E8601A;
 
   /* Tipografías */
-  --font-display:  'Rye', 'Georgia', serif;
-  --font-title:    'Playfair Display', 'Georgia', serif;
-  --font-body:     'Libre Baskerville', 'Georgia', serif;
-  --font-acento:   'Pacifico', cursive;
+  --font-display: 'Rye', 'Georgia', serif;
+  --font-title:   'Playfair Display', 'Georgia', serif;
+  --font-body:    'Libre Baskerville', 'Georgia', serif;
 
   /* Espaciado */
-  --gap-sm: 0.75rem;
-  --gap-md: 1.25rem;
-  --gap-lg: 2rem;
-  --gap-xl: 3rem;
+  --gap-sm:  0.75rem;
+  --gap-md:  1.25rem;
+  --gap-lg:  2rem;
+  --gap-xl:  3rem;
 
-  /* Borde / Sombra */
+  /* Bordes y sombras */
   --shadow-hard:    4px 4px 0px var(--shadow-color);
   --shadow-hard-sm: 2px 2px 0px var(--shadow-color);
-  --border-main:    2px solid var(--border-color);
+  --border-main:    1.5px solid var(--border-color);
 
-  /* FIX #14: espacio inferior para que el FAB no tape contenido */
+  /* FAB clearance */
   --fab-clearance: 6rem;
 }
 
-/* ─── DARK MODE — Punto 15 ──────────────────────────────────── */
-/* Sistema: respeta preferencia del SO */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-body:       #1a1008;
-    --bg-carta:      #211509;
-    --bg-hero:       #0d0804;
-    --bg-footer:     #0d0804;
-    --color-texto:   #f0e6cc;
-    --color-sub:     #c9a87a;
-    --border-color:  #8B6914;
-    --shadow-color:  #000000;
-    --section-label-color: #D35400;
-    --divider-color: #D35400;
-    --rojo:          #C0392B;
-    --naranja:       #E67E22;
-    --dorado:        #F39C12;
-    --verde-olivo:   #6B8E3E;
-    --crema-carta:   #211509;
-  }
-}
-
-/* Toggle manual dark mode — clase .dark-mode en <body>.
-   
-   CSS custom properties NO admiten !important — se ignoran.
-   Funciona por cascada: body.dark-mode redefine las vars en body,
-   y los hijos heredan primero del ancestro más cercano (body > :root).
-   
-   También aplicamos los colores directamente sobre los elementos
-   para máxima compatibilidad entre navegadores. */
-body.dark-mode {
-  --bg-body:              #1a1008;
-  --bg-carta:             #211509;
-  --bg-hero:              #0d0804;
-  --bg-footer:            #0d0804;
-  --color-texto:          #f0e6cc;
-  --color-sub:            #c9a87a;
-  --border-color:         #8B6914;
-  --shadow-color:         #000000;
-  --section-label-color:  #E67E22;
-  --divider-color:        #E67E22;
-  --rojo:                 #C0392B;
-  --naranja:              #E67E22;
-  --dorado:               #F39C12;
-  --verde-olivo:          #6B8E3E;
-  --crema-carta:          #211509;
-  --hueso:                #f0e6cc;
-  --cafe-medio:           #c9a87a;
-  --tinta:                #f0e6cc;
-
-  /* Directo en body — doble seguro */
-  background-color: #1a1008;
-  color: #f0e6cc;
-}
-
-/* Elementos con background propio que no heredan del body */
-body.dark-mode .section-hero { background: #0d0804; }
-body.dark-mode #section-nav  { background: #0d0804; border-bottom-color: #E67E22; }
-body.dark-mode #footer        { background: #0d0804; }
-
-body.dark-mode .card,
-body.dark-mode .bebidas-grid,
-
-
-/* Texto */
-body.dark-mode .card-title           { color: #f0e6cc; }
-body.dark-mode .card-desc,
-body.dark-mode .taco-list li,
-body.dark-mode .size-label,
-body.dark-mode .card-volume,
-body.dark-mode .section-sub          { color: #c9a87a; }
-body.dark-mode .bebida-name          { color: #f0e6cc; }
-body.dark-mode .bebida-name em        { color: #c9a87a; }
-
-/* Section label y líneas decorativas */
-body.dark-mode .section-label        { color: #E67E22; }
-body.dark-mode .section-label::before,
-body.dark-mode .section-label::after { background: #E67E22; }
-
-/* ─── Reset & Base ───────────────────────────────────────────── */
+/* ─── Reset & Base ──────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  scroll-padding-top: 54px;
 }
-
-/* FIX #17: offset de scroll para el nav sticky */
-html { scroll-padding-top: 56px; }
 
 body {
   background-color: var(--bg-body);
   color: var(--color-texto);
   font-family: var(--font-body);
-  line-height: 1.65;
+  line-height: 1.68;
+  /* Textura de ruido sutil */
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
   background-size: 300px 300px;
   min-height: 100vh;
   overflow-x: hidden;
-  /* FIX #14: padding para que el FAB no tape el último contenido */
   padding-bottom: var(--fab-clearance);
-  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 img { max-width: 100%; display: block; border-radius: inherit; }
 ul  { list-style: none; }
 a   { color: inherit; text-decoration: none; }
 
-/* ─── Preloader ──────────────────────────────────────────────── */
+/* ─── PRELOADER RENOVADO 2025 ───────────────────────────────── */
 #preloader {
   position: fixed;
   inset: 0;
-  background: var(--cafe-cuero);
+  background: radial-gradient(ellipse at center, #1a0d04 0%, #080402 70%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+  overflow: hidden;
 }
 
 #preloader.hidden {
@@ -180,52 +99,109 @@ a   { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
-.loader-ring {
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 2;
   position: relative;
-  width: 100px;
-  height: 100px;
+}
+
+.preloader-logo-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
-.loader-blob {
+.preloader-logo {
   width: 80px;
   height: 80px;
-  background: var(--naranja);
-  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-  animation: blobPulse 1.8s ease-in-out infinite, blobSpin 3s linear infinite;
-  box-shadow: 0 0 30px rgba(211, 84, 0, 0.5);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
 }
 
-.loader-text {
+.preloader-logo-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--naranja);
+  border-right-color: var(--dorado);
+  animation: preloaderRingSpin 1.4s linear infinite;
+}
+
+.preloader-name {
   font-family: var(--font-display);
   color: var(--hueso);
-  font-size: 1.4rem;
-  margin-top: 1.5rem;
-  letter-spacing: 0.15em;
-  opacity: 0.9;
+  font-size: 1.5rem;
+  letter-spacing: 0.18em;
+  text-align: center;
 }
 
-/* ─── STICKY NAV — FIXES ─────────────────────────────────────── */
+.preloader-tagline {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-sub);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+/* Barra de progreso */
+.preloader-bar-wrap {
+  width: 120px;
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--naranja), var(--dorado));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Partículas de brasa en el preloader */
+.pre-ember {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pre-ember-1 { width: 3px; height: 3px; background: var(--naranja); bottom: 15%; left: 20%; animation: emberFloat 3.5s ease-in 0s infinite; --drift: -12px; --dur: 3.5s; --delay: 0s; }
+.pre-ember-2 { width: 4px; height: 4px; background: var(--dorado);  bottom: 10%; left: 50%; animation: emberFloat 2.8s ease-in 0.7s infinite; --drift: 14px; --dur: 2.8s; --delay: 0.7s; }
+.pre-ember-3 { width: 2px; height: 2px; background: var(--rojo-claro); bottom: 12%; left: 75%; animation: emberFloat 4s ease-in 1.3s infinite; --drift: -8px; --dur: 4s; --delay: 1.3s; }
+.pre-ember-4 { width: 3px; height: 3px; background: var(--naranja); bottom: 8%; left: 35%; animation: emberFloat 3.2s ease-in 1.9s infinite; --drift: 10px; --dur: 3.2s; --delay: 1.9s; }
+
+/* ─── STICKY NAV ────────────────────────────────────────────── */
 #section-nav {
   position: sticky;
   top: 0;
   z-index: 500;
-  background: var(--bg-hero);
-  border-bottom: 2px solid var(--naranja);
-  /* FIX SCROLL: overflow FUERA del nav raíz — en iOS/Android el overflow-x
-     en un elemento sticky crea un contexto que intercepta eventos touch
-     del documento y traba el scroll. Solo .nav-tabs tiene overflow. */
+  background: rgba(10, 6, 3, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 96, 26, 0.35);
   overflow: visible;
   will-change: transform;
   display: flex;
   align-items: stretch;
-  /* Espacio a la derecha para el botón dark-toggle fijo */
-  padding-right: 48px;
+  padding-right: 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
-/* FIX SCROLL: overflow SOLO en el contenedor de tabs, no en el nav */
 .nav-tabs {
   display: flex;
   gap: 0;
@@ -241,99 +217,75 @@ a   { color: inherit; text-decoration: none; }
 
 .nav-tab {
   font-family: var(--font-display);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245,238,220,0.65);
-  padding: 0.8rem 0.9rem;
+  color: rgba(242, 232, 208, 0.5);
+  padding: 0 0.85rem;
   border: none;
   background: transparent;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color 0.2s, background 0.2s;
   flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
-  /* Área táctil mínima cómoda */
-  min-height: 44px;
+  min-height: 52px;
   display: flex;
   align-items: center;
+  gap: 0.3rem;
 }
 
+/* Indicador activo — línea deslizante */
 .nav-tab::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--naranja);
+  background: linear-gradient(90deg, var(--naranja), var(--dorado));
   transform: scaleX(0);
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 2px 2px 0 0;
 }
 
-.nav-tab:hover,
-.nav-tab.active { color: var(--hueso); }
+.nav-tab:hover  { color: rgba(242,232,208,0.85); background: rgba(232,96,26,0.06); }
+.nav-tab.active { color: var(--hueso); background: rgba(232,96,26,0.08); }
 .nav-tab.active::after { transform: scaleX(1); }
 
-/* FIX DARK TOGGLE: posición fija independiente del nav.
-   Al sacarlo del flujo del nav, nunca compite por espacio con los tabs
-   y siempre es tappable en cualquier tamaño de pantalla. */
-.dark-toggle {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 501;              /* Un nivel sobre el nav */
-  width: 48px;
-  height: 48px;              /* Área táctil garantizada */
-  background: var(--bg-hero);
-  border: none;
-  border-left: 1px solid rgba(245,238,220,0.15);
-  border-bottom: 2px solid var(--naranja);
-  color: rgba(245,238,220,0.8);
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: color 0.2s, background 0.35s ease;
-  -webkit-tap-highlight-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Sincronizar transición con el body en dark mode */
+/* Punto indicador "nuevo" — se agrega por JS al tab Cantarito */
+.nav-tab .new-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--dorado);
+  flex-shrink: 0;
+  animation: newDotPulse 2s ease-in-out infinite;
 }
 
-.dark-toggle:hover,
-.dark-toggle:active { color: var(--naranja); }
-
-/* En dark mode el toggle también cambia de fondo */
-body.dark-mode .dark-toggle { background: #0d0804; }
+/* .dark-toggle eliminado — siempre modo oscuro */
+.dark-toggle { display: none !important; }
 
 /* ─── Hero / Header ─────────────────────────────────────────── */
 .section-hero {
   position: relative;
   background: var(--bg-hero);
-  padding: 3.5rem 1.5rem 3rem;
+  padding: 3.5rem 1.5rem 4rem;
   text-align: center;
   overflow: hidden;
-  padding-bottom: 5rem;
-  /* FIX #16: clip-path solo en navegadores no-Safari o con fallback seguro.
-     Usamos @supports para aplicarlo solo donde se sabe que funciona bien. */
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
-/* FIX #16: clip-path dentro de @supports para aislar Safari problemático */
 @supports (clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%)) {
   .section-hero {
     clip-path: polygon(0 0, 100% 0, 100% 92%, 97% 95%, 94% 92%, 91% 96%, 87% 93%, 83% 97%, 79% 93%, 75% 96%, 71% 92%, 67% 96%, 63% 93%, 59% 97%, 55% 93%, 51% 97%, 47% 93%, 43% 96%, 39% 92%, 35% 96%, 31% 92%, 27% 96%, 23% 92%, 19% 96%, 15% 92%, 11% 96%, 7% 92%, 3% 96%, 0 92%);
   }
 }
 
-/* Fallback elegante para Safari iOS: borde redondeado asimétrico */
 @supports not (clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%)) {
-  .section-hero {
-    border-radius: 0 0 40% 40% / 0 0 20px 20px;
-  }
+  .section-hero { border-radius: 0 0 40% 40% / 0 0 20px 20px; }
 }
 
-/* FIX A: Video de fondo en hero */
 .hero-video-wrap {
   position: absolute;
   inset: 0;
@@ -345,20 +297,19 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.18;
+  opacity: 0.2;
   pointer-events: none;
 }
 
-/* Overlay sobre el video para mantener legibilidad */
 .hero-video-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(62,39,35,0.5) 0%,
-    rgba(62,39,35,0.3) 60%,
-    rgba(62,39,35,0.7) 100%
+    rgba(10,6,3,0.55) 0%,
+    rgba(10,6,3,0.3) 50%,
+    rgba(10,6,3,0.8) 100%
   );
 }
 
@@ -376,16 +327,19 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 }
 
 .logo-wrap {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 1.25rem;
-  border: 3px solid var(--naranja);
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.1rem;
+  border: 2px solid var(--naranja);
   border-radius: 50%;
-  background: var(--rojo);
+  background: rgba(62,39,35,0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 6px rgba(211,84,0,0.2), var(--shadow-hard);
+  box-shadow:
+    0 0 0 5px rgba(232,96,26,0.15),
+    0 0 0 10px rgba(232,96,26,0.05),
+    var(--shadow-hard);
   overflow: hidden;
 }
 
@@ -401,29 +355,107 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 8vw, 3.5rem);
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
   color: var(--hueso);
   letter-spacing: 0.08em;
   line-height: 1.1;
-  text-shadow: 3px 3px 0 var(--rojo);
+  text-shadow: 3px 3px 0 rgba(192,57,43,0.6), 0 0 30px rgba(232,96,26,0.2);
 }
 
 .hero-sub {
   font-family: var(--font-body);
   font-style: italic;
   color: var(--naranja);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  margin-top: 0.4rem;
   letter-spacing: 0.12em;
+  opacity: 0.9;
 }
 
-.hero-divider {
+/* Pills de categorías — nuevo 2025 */
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.hero-pill {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(242,232,208,0.75);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(232,96,26,0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hero-pill--new {
+  color: var(--dorado);
+  border-color: rgba(212, 160, 23, 0.5);
+  background: rgba(212,160,23,0.08);
+  animation: pillGlow 2.5s ease-in-out infinite;
+}
+
+/* Ícono SVG dentro de las pills del hero */
+.pill-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  color: currentColor;
+  opacity: 0.85;
+}
+
+/* CTA botón */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 1.5rem;
-  color: var(--naranja);
-  opacity: 0.6;
-  font-size: 0.7rem;
-  letter-spacing: -0.1em;
-  overflow: hidden;
+  padding: 0.65rem 1.5rem;
+  background: linear-gradient(135deg, var(--naranja), var(--dorado));
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-cta:hover,
+.hero-cta:active {
+  transform: translate(-2px,-2px);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
+}
+
+.hero-cta-arrow {
+  font-size: 1rem;
+  animation: ctaArrowBounce 1.6s ease-in-out infinite;
+}
+
+/* Ícono SVG en el badge de Cantarito */
+.badge-icon {
+  width: 10px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  color: currentColor;
+  margin: 0 0.1rem;
 }
 
 /* ─── Section Common ─────────────────────────────────────────── */
@@ -435,8 +467,8 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 
 .section-label {
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--section-label-color);
   text-align: center;
@@ -448,12 +480,12 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 .section-label::after {
   content: '';
   display: inline-block;
-  width: 2.5rem;
+  width: 3rem;
   height: 1px;
-  background: var(--divider-color);
+  background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
   vertical-align: middle;
-  margin: 0 0.5rem;
-  opacity: 0.5;
+  margin: 0 0.6rem;
+  opacity: 0.55;
 }
 
 .section-sub {
@@ -465,7 +497,7 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   margin-bottom: 1.25rem;
 }
 
-/* FIX C: Separadores SVG entre secciones */
+/* Separadores ondulados entre secciones */
 .menu-section + .menu-section {
   position: relative;
 }
@@ -474,24 +506,21 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   content: '';
   display: block;
   width: 100%;
-  height: 24px;
+  height: 28px;
   margin-bottom: 0.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 24'%3E%3Cpath d='M0 12 Q25 4 50 12 Q75 20 100 12 Q125 4 150 12 Q175 20 200 12 Q225 4 250 12 Q275 20 300 12 Q325 4 350 12 Q375 20 400 12' fill='none' stroke='%23D35400' stroke-width='1.5' stroke-opacity='0.35'/%3E%3Ccircle cx='200' cy='12' r='3.5' fill='%23D35400' fill-opacity='0.5'/%3E%3Ccircle cx='100' cy='12' r='2' fill='%23D35400' fill-opacity='0.3'/%3E%3Ccircle cx='300' cy='12' r='2' fill='%23D35400' fill-opacity='0.3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 28'%3E%3Cpath d='M0 14 Q25 4 50 14 Q75 24 100 14 Q125 4 150 14 Q175 24 200 14 Q225 4 250 14 Q275 24 300 14 Q325 4 350 14 Q375 24 400 14' fill='none' stroke='%23E8601A' stroke-width='1.5' stroke-opacity='0.28'/%3E%3Ccircle cx='200' cy='14' r='4' fill='%23D4A017' fill-opacity='0.45'/%3E%3Ccircle cx='100' cy='14' r='2.5' fill='%23E8601A' fill-opacity='0.3'/%3E%3Ccircle cx='300' cy='14' r='2.5' fill='%23E8601A' fill-opacity='0.3'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 24px;
+  background-size: 100% 28px;
 }
 
-/* ─── Cards Grid — FIX #12 ───────────────────────────────────── */
+/* ─── Cards Grid ─────────────────────────────────────────────── */
 .cards-grid {
   display: grid;
-  /* FIX #12: minmax ajustado a 150px para pantallas 360px,
-     pero usamos auto-fit para que nunca haya overflow */
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--gap-md);
 }
 
-/* En móviles muy pequeños, 2 columnas explícitas para control total */
 @media (max-width: 380px) {
   .cards-grid {
     grid-template-columns: 1fr 1fr;
@@ -503,7 +532,7 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 .bebidas-grid {
   border: var(--border-main);
   background: var(--bg-carta);
-  padding: var(--gap-md) var(--gap-md);
+  padding: var(--gap-md);
   box-shadow: var(--shadow-hard);
 }
 
@@ -511,10 +540,10 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
-  padding: 0.75rem 0; /* FIX #11: más espacio táctil */
-  border-bottom: 1px dashed rgba(62,39,35,0.25);
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed rgba(242,232,208,0.1);
   font-family: var(--font-body);
-  font-size: 1rem; /* FIX #11: de 0.95 a 1rem */
+  font-size: 1rem;
 }
 
 .bebida-item:last-child { border-bottom: none; }
@@ -522,17 +551,17 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 .bebida-name { flex: 0 0 auto; font-weight: 700; }
 .bebida-name em {
   font-weight: 400;
-  font-size: 0.82rem; /* FIX #11: de 0.78 a 0.82 */
+  font-size: 0.82rem;
   color: var(--color-sub);
 }
 
 .bebida-dots {
   flex: 1;
-  border-bottom: 2px dotted rgba(62,39,35,0.2);
+  border-bottom: 2px dotted rgba(242,232,208,0.12);
   margin-bottom: 3px;
 }
 
-/* ─── FAB WhatsApp — FIX #14 ────────────────────────────────── */
+/* ─── FAB WhatsApp ───────────────────────────────────────────── */
 .fab-whatsapp {
   position: fixed;
   bottom: 1.25rem;
@@ -552,22 +581,11 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   z-index: 1000;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   max-width: calc(100vw - 2.5rem);
-  /* FIX #19: feedback táctil */
   -webkit-tap-highlight-color: transparent;
 }
 
-.fab-whatsapp:hover,
-.fab-whatsapp:active {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 #128C7E, 0 6px 24px rgba(37,211,102,0.4);
-}
-
-/* FIX #19: :active en touch */
-.fab-whatsapp:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0 #128C7E, 0 2px 10px rgba(37,211,102,0.3);
-}
-
+.fab-whatsapp:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #128C7E, 0 6px 24px rgba(37,211,102,0.4); }
+.fab-whatsapp:active { transform: translate(1px,1px); box-shadow: 1px 1px 0 #128C7E; }
 .fab-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ─── Footer ─────────────────────────────────────────────────── */
@@ -577,7 +595,6 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   padding: var(--gap-xl) 1.5rem var(--gap-lg);
 }
 
-/* FIX #16: mismo fix del clip-path para el footer */
 @supports (clip-path: polygon(0 8%, 100% 8%, 100% 100%, 0 100%)) {
   #footer {
     clip-path: polygon(0 8%, 3% 4%, 7% 8%, 11% 4%, 15% 8%, 19% 4%, 23% 8%, 27% 4%, 31% 8%, 35% 4%, 39% 8%, 43% 4%, 47% 8%, 51% 4%, 55% 8%, 59% 4%, 63% 8%, 67% 4%, 71% 8%, 75% 4%, 79% 8%, 83% 4%, 87% 8%, 91% 4%, 94% 8%, 97% 4%, 100% 8%, 100% 100%, 0 100%);
@@ -586,15 +603,38 @@ body.dark-mode .dark-toggle { background: #0d0804; }
 }
 
 @supports not (clip-path: polygon(0 8%, 100% 8%, 100% 100%, 0 100%)) {
-  #footer {
-    border-radius: 20px 20px 0 0;
-    margin-top: var(--gap-xl);
-  }
+  #footer { border-radius: 20px 20px 0 0; margin-top: var(--gap-xl); }
 }
 
 .footer-inner { max-width: 680px; margin: 0 auto; text-align: center; }
-.footer-title { font-family: var(--font-display); font-size: 1.8rem; color: var(--hueso); letter-spacing: 0.1em; }
-.footer-tagline { font-style: italic; color: var(--naranja); font-size: 0.85rem; margin-top: 0.25rem; }
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.footer-flame {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.25rem;
+  filter: drop-shadow(0 0 8px rgba(232,96,26,0.5));
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--hueso);
+  letter-spacing: 0.1em;
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: var(--naranja);
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
 
 .footer-actions {
   margin: 1.75rem 0 1.5rem;
@@ -610,51 +650,294 @@ body.dark-mode .dark-toggle { background: #0d0804; }
   gap: 0.5rem;
   background: transparent;
   color: var(--hueso);
-  border: 2px solid var(--naranja);
+  border: 1.5px solid var(--naranja);
   padding: 0.65rem 1.5rem;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.88rem;
   letter-spacing: 0.05em;
-  box-shadow: 3px 3px 0 var(--naranja);
+  box-shadow: 3px 3px 0 rgba(232,96,26,0.5);
   transition: transform 0.15s, box-shadow 0.15s;
   -webkit-tap-highlight-color: transparent;
 }
 
 .btn-maps:hover,
-.btn-maps:active { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--naranja); }
+.btn-maps:active { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 rgba(232,96,26,0.6); }
 
-.social-links { display: flex; gap: 0.75rem; }
+.social-links { display: flex; gap: 0.65rem; }
 
 .social-link {
-  width: 44px; /* FIX #19: área táctil mínima 44px */
+  width: 44px;
   height: 44px;
-  border: 2px solid rgba(245,238,220,0.35);
-  color: var(--hueso);
+  border: 1.5px solid rgba(242,232,208,0.2);
+  color: rgba(242,232,208,0.65);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  transition: background 0.2s, border-color 0.2s;
+  border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   -webkit-tap-highlight-color: transparent;
 }
 
-.social-link:hover,
-.social-link:active { background: rgba(211,84,0,0.3); border-color: var(--naranja); }
+.social-link--fb:hover,  .social-link--fb:active  { background: rgba(59,89,152,0.25);  border-color: #4267B2; color: #4267B2; transform: translateY(-2px); }
+.social-link--ig:hover,  .social-link--ig:active  { background: rgba(193,53,132,0.2);  border-color: #C13584; color: #C13584; transform: translateY(-2px); }
+.social-link--wa:hover,  .social-link--wa:active  { background: rgba(37,211,102,0.15); border-color: #25D366; color: #25D366; transform: translateY(-2px); }
 
-.footer-copy { font-size: 0.72rem; opacity: 0.4; margin-top: 1.5rem; font-style: italic; }
+.footer-copy { font-size: 0.72rem; opacity: 0.3; margin-top: 1.5rem; font-style: italic; }
+
+/* ─── Producido por ──────────────────────────────────────────── */
+.producido-por {
+  background: #050302;
+  border-top: 1px solid rgba(212,160,23,0.1);
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.producido-por__texto {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(242,232,208,0.22);
+}
+
+.producido-por__link {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.45;
+  transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 4px;
+}
+
+.producido-por__link:hover,
+.producido-por__link:focus-visible {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(212,160,23,0.5));
+  outline: none;
+}
+
+.producido-por__link:active { transform: scale(0.96); }
+
+.producido-por__logo {
+  height: 26px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.producido-por__nombre {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  color: rgba(212,160,23,0.65);
+  letter-spacing: 0.1em;
+}
 
 /* ─── Section color variants ─────────────────────────────────── */
 .section-especialidad { background: transparent; }
-.section-domingos     { background: rgba(139,0,0,0.04); }
-.section-cocteles     { background: rgba(74,94,42,0.05); }
+.section-domingos     { background: rgba(192,57,43,0.04); }
+.section-cocteles     { background: rgba(74,94,42,0.04); }
 
-/* ─── Responsivo ─────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN CANTARITO — La Estrella Nueva
+═══════════════════════════════════════════════════════════════ */
+
+.section-cantarito {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(232,96,26,0.1) 0%,
+    rgba(212,160,23,0.06) 50%,
+    rgba(232,96,26,0.1) 100%
+  );
+  overflow: visible;
+}
+
+.cantarito-glow-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(232,96,26,0.18);
+  animation: cantaritoGlowPulse 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-label--cantarito {
+  color: var(--dorado) !important;
+  font-size: 0.7rem !important;
+  animation: cantaritoLabelBlink 2.5s ease-in-out infinite;
+  letter-spacing: 0.25em !important;
+}
+
+.card-cantarito {
+  border: 2px solid var(--dorado) !important;
+  box-shadow:
+    0 0 0 1px rgba(212,160,23,0.2),
+    6px 6px 0 rgba(212,160,23,0.6),
+    0 20px 60px rgba(212,160,23,0.12) !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card-cantarito::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--rojo), var(--naranja), var(--dorado), #FFD700, var(--dorado), var(--naranja), var(--rojo));
+  background-size: 300% auto;
+  animation: shimmer 2.5s linear infinite;
+  z-index: 3;
+}
+
+.cantarito-img-wrap {
+  aspect-ratio: 4/3 !important;
+  background: linear-gradient(135deg, #1a0f00 0%, #2d1a00 50%, #1a0f00 100%) !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cantarito-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cantarito-img-wrap:not(.no-img) .cantarito-placeholder { opacity: 0; }
+.cantarito-img-wrap.no-img .cantarito-placeholder { opacity: 1; }
+
+.cantarito-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cantarito-svg-icon {
+  width: 80px;
+  height: 106px;
+  color: rgba(212,160,23,0.55);
+  filter: drop-shadow(0 0 18px rgba(212,160,23,0.5));
+  animation: cantaritoFloat 3s ease-in-out infinite;
+}
+
+
+.cantarito-placeholder-text {
+  font-family: var(--font-body);
+  color: rgba(212,160,23,0.45);
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cantarito-placeholder-text small { font-size: 0.62rem; opacity: 0.6; font-style: italic; }
+
+.cantarito-ribbon {
+  position: absolute;
+  top: 18px;
+  right: -28px;
+  background: linear-gradient(90deg, var(--rojo), #a93226);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  padding: 0.3rem 3rem;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  z-index: 4;
+  animation: ribbonShine 4s ease-in-out infinite;
+}
+
+.cantarito-body { padding: 1.4rem 1.5rem 1.75rem; }
+
+.badge-cantarito {
+  background: linear-gradient(135deg, var(--dorado), #b8860b) !important;
+  color: #0a0603 !important;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.4), 0 0 14px rgba(212,160,23,0.35);
+}
+
+.cantarito-title {
+  font-size: 2.1rem !important;
+  color: var(--dorado) !important;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.6), 0 0 24px rgba(212,160,23,0.3) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.cantarito-volume {
+  font-size: 1rem !important;
+  color: var(--naranja) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem !important;
+}
+
+.cantarito-desc {
+  font-size: 0.95rem !important;
+  color: var(--color-sub) !important;
+  line-height: 1.7 !important;
+  border-left: 3px solid var(--dorado);
+  padding-left: 0.85rem;
+  margin-bottom: 1.25rem !important;
+}
+
+.cantarito-price-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(212,160,23,0.08);
+  border: 1px solid rgba(212,160,23,0.25);
+  padding: 0.9rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.cantarito-litros {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--naranja);
+  letter-spacing: 0.05em;
+}
+
+.cantarito-price-tag {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--dorado);
+  line-height: 1;
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.5), 0 0 30px rgba(212,160,23,0.4);
+}
+
+.cantarito-cta {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--naranja);
+  font-style: italic;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 400px) {
-  .fab-label  { display: none; }
+  .fab-label { display: none; }
   .fab-whatsapp { padding: 0.85rem; border-radius: 50%; }
 }
 
